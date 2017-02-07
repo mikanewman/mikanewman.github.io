@@ -64,7 +64,7 @@
 		 <script src="http://vkontakte.ru/js/api/xd_connection.js?2" type="text/javascript"></script>
                 <script type="text/javascript">
                 VK.init(function() {
-                        alert('vk initialized!');
+                        //alert('vk initialized!');
                         VK.addCallback('onWindowBlur', function(settings){UnityHide(); });
                         VK.addCallback('onWindowFocus', function(settings){UnityShow(); });
                         }, function() {
@@ -84,7 +84,7 @@
                                 GetUnity().SendMessage("SocialManager", func, what);
                         }
                         function GetParams() {
-                                alert(document.location.href +'');
+                                //alert(document.location.href +'');
                                 SendToPlayer("RecvParams",document.location.href +'');
                         }
                         function GetProfile(uid){
