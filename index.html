@@ -1,56 +1,29 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-        <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-                <title>Unity Web Player | New Unity Project 5</title>
-                <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-                
-<script type="text/javascript" src="//vk.com/js/api/openapi.js?117"></script>
-
-
-  
-
-
-
-
-
-<input type="button" value="Вступить в группу" onclick="openWin()">
-<script language="JavaScript">
-<!-- hide
-
-function openWin() {
-  myWin= open("https://vk.com/warismoney");
-}
-
-// -->
-</script>
-
-<script src="https://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
-        
-    
-<script type="text/javascript">
-                <!--
-                var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
-                if (document.location.protocol == 'https:')
-                        unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
-                document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
-                -->
-                </script>
-
-
-
-
-<script type='text/javascript'>
-var config = {
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Unity Web Player | VKONTAKTEAUTHTEST2</title>
+		<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+		<script type="text/javascript">
+		<!--
+		var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+		if (document.location.protocol == 'https:')
+			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		-->
+		</script>
+		<script type="text/javascript">
+		<!--
+			var config = {
 				width: 640, 
 				height: 480,
 				params: { enableDebugging:"0" }
 				
 			};
 			config.params["disableContextMenu"] = true;
-var u = new UnityObject2(config);             //переменные для обратной мессаги в юнити
-
-jQuery(function() {
+			var u = new UnityObject2(config);
+			
+			jQuery(function() {
 
 				var $missingScreen = jQuery("#unityPlayer").find(".missing");
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
@@ -84,133 +57,80 @@ jQuery(function() {
 						break;
 					}
 				});
-				u.initPlugin(jQuery("#unityPlayer")[0], "game21.unity3d");
+				u.initPlugin(jQuery("#unityPlayer")[0], "VKONTAKTEAUTHTEST2.unity3d");
 			});
-
- function oneorder() {
-    var params = {
-      type: 'item',
-      item: 'item4'
-    };
-    VK.callMethod('showOrderBox', params);
- //   document.getElementById('unityPlayer').style.visibility = 'visible';
-//Say();
-
-  }
-
-  var callbacksResults = document.getElementById('callbacks');
-
-  VK.addCallback('onOrderSuccess', onOrderSuccess);
-  VK.addCallback('onOrderFail', onOrderFail);
-  VK.addCallback('onOrderCancel', onOrderCancel);
-
-
-
-
-
-function onOrderSuccess()
-{
-   document.getElementById('unityPlayer').style.visibility = 'visible';
-   u.getUnity().SendMessage("Object", "MyFunction", "ok_monet4");
-}
-
-
-function onOrderFail()
-{
-   document.getElementById('unityPlayer').style.visibility = 'visible';
-   u.getUnity().SendMessage("Object", "MyFunction", "Hello Order fail!");   
-
-}
-
-function onOrderCancel()
-{
-   document.getElementById('unityPlayer').style.visibility = 'visible';
-   u.getUnity().SendMessage("Object", "MyFunction", "Hello Order cancel!");   
-
-}
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
+		-->
+		</script>
+		 <script src="http://vkontakte.ru/js/api/xd_connection.js?2" type="text/javascript"></script>
                 <script type="text/javascript">
-                <!--
-                        var params = {
-            backgroundcolor: "000000",
-            bordercolor: "000000",
-            textcolor: "FFFFFF",
-            logoimage: "https://warismoney.ru/150.png",
-            progressbarimage: "https://warismoney.ru/pbarf.png",
-            progressframeimage: "https://warismoney.ru/pbar.png"
-        };
-        var u = new UnityObject2({ params: params });
-
-                        jQuery(function() {
-
-                                var $missingScreen = jQuery("#unityPlayer").find(".missing");
-                                var $brokenScreen = jQuery("#unityPlayer").find(".broken");
-                                $missingScreen.hide();
-                                $brokenScreen.hide();
-                                
-                                u.observeProgress(function (progress) {
-                                        switch(progress.pluginStatus) {
-                                                case "broken":
-                                                        $brokenScreen.find("a").click(function (e) {
-                                                                e.stopPropagation();
-                                                                e.preventDefault();
-                                                                u.installPlugin();
-                                                                return false;
-                                                        });
-                                                        $brokenScreen.show();
-                                                break;
-                                                case "missing":
-                                                        $missingScreen.find("a").click(function (e) {
-                                                                e.stopPropagation();
-                                                                e.preventDefault();
-                                                                u.installPlugin();
-                                                                return false;
-                                                        });
-                                                        $missingScreen.show();
-                                                break;
-                                                case "installed":
-                                                        $missingScreen.remove();
-                                                break;
-                                                case "first":
-                                                break;
-                                        }
+                VK.init(function() {
+                        //alert('vk initialized!');
+                        VK.addCallback('onWindowBlur', function(settings){UnityHide(); });
+                        VK.addCallback('onWindowFocus', function(settings){UnityShow(); });
+                        }, function() {
+                        // API initialization failed
+                        // Can reload page here
+                }, '5.23');
+                function GetUnity() {
+                                return u.getUnity();
+                        }
+                        function UnityShow() {
+                                GetUnity().style.visibility = 'visible';
+                        }      
+                        function UnityHide() {
+                                GetUnity().style.visibility = 'hidden';
+                        }
+                        function SendToPlayer(func, what){
+                                GetUnity().SendMessage("SocialManager", func, what);
+                        }
+                        function GetParams() {
+                                //alert(document.location.href +'');
+                                SendToPlayer("RecvParams",document.location.href +'');
+                        }
+                        function GetProfile(uid){
+                                VK.api('users.get',{uids: uid,fields: 'first_name, photo, last_name'},function(data){
+                               
+                                var Fname ="";
+                                var Lname ="";
+                                var Photo ="";
+                                       
+                                if(data.response){
+                                        Fname = data.response[0]['first_name'];
+                                        Lname = data.response[0]['last_name'];
+                                        Photo = data.response[0]['photo'];
+                                        var Profile = [uid,Fname,Lname,Photo];
+                                        SendToPlayer("OnGetPlayer", "" + Profile);
+                                }
                                 });
-                                u.initPlugin(jQuery("#unityPlayer")[0], "game21.unity3d");
-                        });
-                -->
+                        }
+                        function PostToWall(text) {
+                                        var photo_num = "photo-14949121_333605426";
+                                       
+                                        VK.api('wall.post', {message: text,
+                                                attachments : photo_num + ",http://vk.com/app4473338"
+                                        },function(data){
+                                       
+                                        });
+                                }
+                        function ShowInvite(){
+                                VK.callMethod("showInviteBox");
+                        }      
                 </script>
-
-<style type="text/css">
+		
+		
+		<style type="text/css">
 		<!--
 		body {
 			font-family: Helvetica, Verdana, Arial, sans-serif;
-			background-color: black;
-			color: white;
+			background-color: white;
+			color: black;
 			text-align: center;
 		}
 		a:link, a:visited {
-			color: #bfbfbf;
+			color: #000;
 		}
 		a:active, a:hover {
-			color: #bfbfbf;
+			color: #666;
 		}
 		p.header {
 			font-size: small;
@@ -223,7 +143,7 @@ function onOrderCancel()
 		}
 		div.content {
 			margin: auto;
-			width: 988px;
+			width: 640px;
 		}
 		div.broken,
 		div.missing {
@@ -247,112 +167,23 @@ function onOrderCancel()
 		}
 		div#unityPlayer {
 			cursor: default;
-			height: 600px;
-			width: 988px;
+			height: 480px;
+			width: 640px;
 		}
 		-->
 		</style>
-
-
-
-<script type="text/javascript">
-		VK.init(function() { 
-   
-var user_id = null;
-	var app_id = 5075054;
-	var a = new VKAdman();
-	a.setupPreroll(app_id);
-	admanStat(app_id, user_id);
-			VK.addCallback('onWindowBlur', function(settings){UnityHide(); });
-			VK.addCallback('onWindowFocus', function(settings){UnityShow(); });
-			}, function() {
-			// API initialization failed
-			// Can reload page here
-		}, '5.23');
-		function GetUnity() {
-				return u.getUnity();
-			}
-			function UnityShow() {
-				GetUnity().style.visibility = 'visible';
-			}	
-			function UnityHide() {
-				GetUnity().style.visibility = 'hidden';
-			}
-			function SendToPlayer(func, what){
-				GetUnity().SendMessage("SocialManager", func, what);
-			}
-			function GetParams() {
-				//alert(document.location.href +'');
-				SendToPlayer("RecvParams",document.location.href +'');
-			}
-			function GetProfile(uid){
-				VK.api('users.get',{uids: uid,fields: 'first_name, photo, last_name'},function(data){
-				
-				var Fname ="";
-				var Lname ="";
-				var Photo ="";
-					
-				if(data.response){
-					Fname = data.response[0]['first_name'];
-					Lname = data.response[0]['last_name'];
-					Photo = data.response[0]['photo'];
-					var Profile = [uid,Fname,Lname,Photo];
-					SendToPlayer("OnGetPlayer", "" + Profile);
-				}
-				});
-			}
-			function PostToWall(text) {
-					var photo_num = "photo-14949121_333605426";
-					
-					VK.api('wall.post', {message: text,
-						attachments : photo_num + ",http://vk.com/app4473338"
-					},function(data){
-					
-					});
-				}
-			function ShowInvite(){
-				VK.callMethod("showInviteBox");
-			}	
-		</script> 
-
-        </head>
-
-
-        <body>
-
-
-                <p class="header"></p>
-                <div class="content">
-                        <div id="unityPlayer">
-                                <div class="missing">
-                                        <a href="https://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
-                                                <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
-                                        </a>
-                                </div>
-                                <div class="broken">
-                                        <a href="https://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
-                                                <img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
-                                        </a>
-                                </div>
-                        </div>
-                </div>
-                
-        </body>
+	</head>
+	<body>
+		<p class="header"><span>Unity Web Player | </span>VKONTAKTEAUTHTEST2</p>
+		<div class="content">
+			<div id="unityPlayer">
+				<div class="missing">
+					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+					</a>
+				</div>
+			</div>
+		</div>
+		<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
+	</body>
 </html>
-<script type="text/javascript"> 
-function Invite () 
-{ 
-VK.callMethod("showInviteBox"); 
-} 
-</script> 
-
-
-
-            
-    
-    
-          
- 
-
-
-
