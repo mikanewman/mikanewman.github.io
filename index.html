@@ -23,48 +23,6 @@
 			config.params["disableContextMenu"] = true;
 			var u = new UnityObject2(config);
 			
-			function oneorder() {
-    var params = {
-      type: 'item',
-      item: 'item4'
-    };
-    VK.callMethod('showOrderBox', params);
- //   document.getElementById('unityPlayer').style.visibility = 'visible';
-//Say();
-
-  }
-
-  var callbacksResults = document.getElementById('callbacks');
-
-  VK.addCallback('onOrderSuccess', onOrderSuccess);
-  VK.addCallback('onOrderFail', onOrderFail);
-  VK.addCallback('onOrderCancel', onOrderCancel);
-
-
-
-
-
-function onOrderSuccess()
-{
-   document.getElementById('unityPlayer').style.visibility = 'visible';
-   u.getUnity().SendMessage("Object", "MyFunction", "ok_monet4");
-}
-
-
-function onOrderFail()
-{
-   document.getElementById('unityPlayer').style.visibility = 'visible';
-   u.getUnity().SendMessage("Object", "MyFunction", "Hello Order fail!");   
-
-}
-
-function onOrderCancel()
-{
-   document.getElementById('unityPlayer').style.visibility = 'visible';
-   u.getUnity().SendMessage("Object", "MyFunction", "Hello Order cancel!");   
-
-}
-			
 			jQuery(function() {
 
 				var $missingScreen = jQuery("#unityPlayer").find(".missing");
@@ -101,6 +59,7 @@ function onOrderCancel()
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "VKONTAKTEAUTHTEST2.unity3d");
 			});
+			
 		-->
 		</script>
 		 <script src="http://vkontakte.ru/js/api/xd_connection.js?2" type="text/javascript"></script>
