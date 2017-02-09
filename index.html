@@ -41,8 +41,14 @@ function openWin() {
 
 
 <script type='text/javascript'>
-
-var u = new UnityObject2();             //переменные для обратной мессаги в юнити
+var config = {
+				width: 640, 
+				height: 480,
+				params: { enableDebugging:"0" }
+				
+			};
+			config.params["disableContextMenu"] = true;
+var u = new UnityObject2(config);             //переменные для обратной мессаги в юнити
 u.initPlugin(jQuery("#unityPlayer")[0], "game21.unity3d");
 
  function oneorder() {
